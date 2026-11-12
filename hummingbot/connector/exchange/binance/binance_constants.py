@@ -8,10 +8,11 @@ MAX_ORDER_ID_LEN = 32
 
 # Base URL
 # REST_URL = "https://api.binance.{}/api/"
-REST_URL = "https://testnet.binance.vision/api"
+REST_URL = "https://testnet.binance.vision/api/"
 
 # WSS_URL = "wss://stream.binance.{}:9443/ws"
-WSS_URL = "wss://stream.testnet.binance.vision:9443/stream"
+# WSS_URL = "wss://stream.testnet.binance.vision:9443/stream"
+WSS_URL = "wss://stream.testnet.binance.vision/ws"
 
 # WSS_API_URL = "wss://ws-api.binance.{}:443/ws-api/v3"
 WSS_API_URL = "wss://ws-api.testnet.binance.vision/ws-api/v3"

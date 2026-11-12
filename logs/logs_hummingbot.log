@@ -1,0 +1,54 @@
+2026-11-07 11:07:53,345 - 73120 - hummingbot.connector.time_synchronizer - NETWORK - Error getting server time.
+Traceback (most recent call last):
+  File "/home/hilton/git_release/hummingbot-mod/hummingbot/connector/time_synchronizer.py", line 66, in update_server_time_offset_with_time_provider
+    server_time_ms: float = await time_provider
+                            ^^^^^^^^^^^^^^^^^^^
+  File "/home/hilton/git_release/hummingbot-mod/hummingbot/connector/exchange/binance/binance_web_utils.py", line 71, in get_current_server_time
+    response = await rest_assistant.execute_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/home/hilton/git_release/hummingbot-mod/hummingbot/core/web_assistant/rest_assistant.py", line 48, in execute_request
+    response = await self.execute_request_and_get_response(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<9 lines>...
+    )
+    ^
+  File "/home/hilton/git_release/hummingbot-mod/hummingbot/core/web_assistant/rest_assistant.py", line 101, in execute_request_and_get_response
+    raise IOError(f"Error executing request {method.name} {url}. HTTP status is {response.status}. "
+                  f"Error: {error_text}")
+OSError: Error executing request GET https://testnet.binance.vision/apiv3/time. HTTP status is 404. Error:
+2026-11-07 11:07:53,347 - 73120 - hummingbot.connector.time_synchronizer - WARNING - Could not refresh server time. Check network connection.
+2026-11-07 11:07:53,611 - 73120 - hummingbot.connector.exchange.binance.binance_exchange.BinanceExchange - ERROR - There was an error requesting exchange info.
+Traceback (most recent call last):
+  File "/home/hilton/git_release/hummingbot-mod/hummingbot/connector/exchange_py_base.py", line 1113, in _initialize_trading_pair_symbol_map
+    exchange_info = await self._make_trading_pairs_request()
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hilton/git_release/hummingbot-mod/hummingbot/connector/exchange_py_base.py", line 1126, in _make_trading_pairs_request
+    exchange_info = await self._api_get(path_url=self.trading_pairs_request_path)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hilton/git_release/hummingbot-mod/hummingbot/connector/exchange_py_base.py", line 903, in _api_get
+    return await self._api_request(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hilton/git_release/hummingbot-mod/hummingbot/connector/exchange_py_base.py", line 946, in _api_request
+    request_result = await rest_assistant.execute_request(
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<8 lines>...
+    )
+    ^
+  File "/home/hilton/git_release/hummingbot-mod/hummingbot/core/web_assistant/rest_assistant.py", line 48, in execute_request
+    response = await self.execute_request_and_get_response(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<9 lines>...
+    )
+    ^
+  File "/home/hilton/git_release/hummingbot-mod/hummingbot/core/web_assistant/rest_assistant.py", line 101, in execute_request_and_get_response
+    raise IOError(f"Error executing request {method.name} {url}. HTTP status is {response.status}. "
+                  f"Error: {error_text}")
+OSError: Error executing request GET https://testnet.binance.vision/apiv3/exchangeInfo. HTTP status is 404. Error:
+2026-11-07 11:08:13,933 - 73120 - hummingbot.client.hummingbot_application - ERROR - MQTT is already stopped!
+2026-11-07 11:14:08,221 - 73525 - hummingbot.client.hummingbot_application - ERROR - MQTT is already stopped!
+2026-11-07 11:31:06,641 - 80146 - hummingbot.client.hummingbot_application - ERROR - MQTT is already stopped!
+2026-11-07 12:17:11,028 - 82117 - hummingbot.client.hummingbot_application - ERROR - MQTT is already stopped!
+2026-11-07 13:13:43,854 - 84019 - hummingbot.client.hummingbot_application - ERROR - MQTT is already stopped!
